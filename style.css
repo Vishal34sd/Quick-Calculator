@@ -1,0 +1,147 @@
+/* Set the background gradient for the whole page */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #2c5364, #203a43); /* Dark, cool gradient */
+    overflow: hidden;
+}
+
+/* Futuristic gradient and sleek 3D effects for the calculator */
+#Calculator {
+    max-width: 400px;
+    height: 650px;
+    background: linear-gradient(145deg, #2e2e2e, #222222); /* Dark gradient background */
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), inset 0 0 50px rgba(255, 255, 255, 0.1); /* Inner glow */
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Display with a neon glow effect */
+#display {
+    width: 95%;
+    height: 80px;
+    border: none;
+    font-size: 3rem;
+    padding: 10px;
+    background-color: #1b1b1b;
+    color: #00f7ff; /* Neon blue text */
+    margin-right: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align: end;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Neon glow */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Buttons with neon glow effect and futuristic design */
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 30px;
+    background: linear-gradient(145deg, #2b2b2b, #353535); /* Gradient for a smooth, sleek button */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+    color: #00f7ff; /* Neon blue text */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* Button hover effect with glowing */
+button:hover {
+    background: linear-gradient(145deg, #5f5f5f, #404040); /* Lighter button on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 255, 255, 0.3);
+    color: #00ffb3; /* Change text color to bright green */
+}
+
+/* Button active state (when clicked) */
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* A subtle glowing effect for operators */
+.operator {
+    background: linear-gradient(145deg, #ff8a00, #ff3b00); /* Glowing orange gradient for operators */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3), 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Grid layout for calculator buttons */
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Neon pulse effect for the whole calculator */
+#Calculator:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 50px rgba(0, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Add glowing effect to the display when focused */
+#display:focus {
+    outline: none;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 1); /* Bright neon glow */
+}
+
+/* Make the button text glow */
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Glowing pulse animation on button hover */
+button:hover::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    background: rgba(225, 127, 71, 0.3);
+    animation: pulse 1.5s infinite ease-out;
+}
+
+/* Animation for the glowing effect */
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+}
+
+/* Centered text with subtle glow effect */
+.text {
+    position: absolute;
+    bottom: 20px; /* Distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
